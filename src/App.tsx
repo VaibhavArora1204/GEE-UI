@@ -89,14 +89,14 @@ function App() {
 
     try {
       // 1. Generate GEE code
-      const genRes = await axios.post('https://gee-02fv.onrender.com/generate', {
+      const genRes = await axios.post('https://gee-analytics.onrender.com/generate', {
         query: `${data.query.trim()} at latitude ${data.location.lat} and longitude ${data.location.lng}`,
       });
       console.log('Generate response:', genRes.data);
       if (genRes.data.status === 'success' && genRes.data.gee_code) {
         console.log('Generated GEE code:', genRes.data.gee_code);
         // 2. Execute GEE code
-        const execRes = await axios.post<ExecuteResponse>('https://gee-02fv.onrender.com/execute', {
+        const execRes = await axios.post<ExecuteResponse>('https://gee-analytics.onrender.com/execute', {
           gee_code: genRes.data.gee_code,
         });
         console.log('Execute response full data:', execRes.data);
