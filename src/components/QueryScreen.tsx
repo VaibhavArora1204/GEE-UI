@@ -81,7 +81,7 @@ export default function QueryScreen({ onSubmit }: QueryScreenProps) {
       console.log('Sending API request with query:', queryWithLocation);
       
       // Make the first API call to /initial endpoint
-      const response = await axios.post('https://gee-02fv.onrender.com/initial', {
+      const response = await axios.post('https://gee-analytics.onrender.com/initial', {
         query: queryWithLocation
       });
 
